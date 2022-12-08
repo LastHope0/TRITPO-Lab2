@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    background-color: #BCC4D0;
+}
+
+.container-1 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-2 {
+    width: 750px;
+    margin: 50px;
+}
+
+.container-3 {
+    background-color: #9094D4;
+    padding: 50px 30px 20px 30px;
+    border-radius: 20px;
+}
+
+.logo-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-title {
+    margin: 30px 0px 20px 0px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.input-label {
+    font-size: 19px;
+    margin: 0px 0px 5px 0px;
+}
+
+input {
+    margin-bottom: 40px;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+
+.input-numeric {
+    width: 30px;
+}
+
+.input-street {
+    width: 110px;
+}
+
+.button-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 320px;
+    background-color: #494974;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    transition-duration: 0.2s;
+}
+
+.button:hover{
+    background-color: #7070A5;
+}
+
+.cancel-block {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.cancel-block a {
+    color: white;
+}
+
+.inputs-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.inputs-block-group {
+    position: relative;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.error {
+    width: 300px;
+    font-size: 13px;
+    margin: 5px 0px 21px 0px;
+    color: red;
+}
+
+.error-input {
+    box-shadow: 0px 0px 10px red;
+    margin: 0px;
+}
+
+.error-absolute {
+    position: absolute;
+    bottom: 0px;
+}
+
+.input-absolute {
+    margin-bottom: 40px;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #BCC4D0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: darkgrey;
+    border-radius: 8px;
+    border: 3px solid #BCC4D0;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "maksp/health",
+    "autoload": {
+        "psr-4": {
+            "Maksp\\Health\\": "src/classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "LastHope"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
