@@ -2,13 +2,13 @@
 
 # Содержание
 1 [Введение](#intro)    
-2 [Объект тестирования](#testing_object)
+2 [Объект тестирования](#testing_object)                                                                                                                               
 3 [Атрибуты качества](#quality_attributes)  
 4 [Риски](#risks)  
-5 [Аспекты тестирования](#testing_aspects)
-6 [Подходы к тестированию и их реализация](#testing_approaches)  
-7 [Представление результатов](#results) 
-8 [Выводы](#conclusion)  
+5 [Аспекты тестирования](#testing_aspects)                                                                                                           
+6 [Подходы к тестированию и их реализация](#testing_approaches)                                                                                    
+7 [Представление результатов](#results)                                                                                         
+8 [Выводы](#conclusion)                                                                                                                    
 
 <a name="intro"/>
 
