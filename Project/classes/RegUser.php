@@ -3,7 +3,7 @@
 class RegUser
 {
     private string $name, $surname, $patronymic, $phoneNumber, $id, $clinic, $district, $street, $build, $house, $apartment, $password, $confirmedPassword;
-
+    
     public function __construct($name, $surname, $patronymic, $phoneNumber, $id, $clinic, $district, $street, $build, $house, $apartment, $password, $confirmedPassword)
     {
         $this->name = $name;
@@ -20,8 +20,7 @@ class RegUser
         $this->password = $password;
         $this->confirmedPassword = $confirmedPassword;
     }
-
-
+    
     public function formatCheck($field)
     {
         for($i = 0; $i < mb_strlen($field); $i++)
