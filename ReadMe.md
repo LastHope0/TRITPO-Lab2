@@ -42,4 +42,4 @@ http://health-private.hopto.org/
 
 ## License
 
-Project Burning-Lab.SwipeDetector is distributed under the MIT license.
+Project Health is distributed under the MIT license.
