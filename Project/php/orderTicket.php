@@ -31,7 +31,7 @@ mysqli_query($con, $command);
         <script src="https://unpkg.com/sweetalert2@11.6.5/dist/sweetalert2.all.min.js"></script>
     </head>
     <body>
-        <?php echo "<script>Swal.fire('Талон успешно добавлен!', '', 'success');</script>"; ?>
+        <?php echo "<script>Swal.fire('Талон успешно добален!', '', 'success');</script>"; ?>
         <div class="container-1">
             <div class="container-2">
                 <header>

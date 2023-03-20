@@ -65,7 +65,7 @@ else if(isset($_COOKIE['name']))
                 </div>
                 <div class="container-table">
                     <form action="" class="filter">
-                        <input class="input-filter" placeholder="Направление">
+                        <input class="input-filter" placeholder="Нарпавление">
                         <input class="input-filter" placeholder="ФИО врача">
                         <input class="input-filter" placeholder="Дата">
                         <input class="input-filter" placeholder="Время">
