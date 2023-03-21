@@ -20,12 +20,15 @@
 
 <table>
     <tr>
-            <img src="Project/img/main_page.png" alt="Screenshot">
+            <img src="Project/img/main_page.jpg" alt="Screenshot">
     </tr>
-      <tr>
+	<tr>
+            <img src="Project/img/main_page2.jpg" alt="Screenshot">
+    </tr>
+    <tr>
             <img src="Project/img/info.png" alt="Screenshot">
     </tr>
-      <tr>
+    <tr>
             <img src="Project/img/tickets.png" alt="Screenshot">
     </tr>
 </table>
