@@ -1,7 +1,14 @@
 <?php
 
 session_start();
-session_unset();
+
+/* SESSION UNSET */
+$sessionKeys = array_keys($_SESSION);
+foreach($sessionKeys as $key) {
+    if($key != 'theme')
+        unset($_SESSION[$key]);
+}
+
 setcookie('surname', null, -1);
 setcookie('name', null, -1);
 setcookie('id', null, -1);

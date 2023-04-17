@@ -4,7 +4,17 @@
         <title>Health - Ортопедия</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/terapevtia.css" rel="stylesheet">
+        <?php
+            session_start();
+            if(!isset($_SESSION['theme']))
+                $_SESSION['theme'] = 'light';
+        
+            if($_SESSION['theme'] == 'light')
+                echo "<link href=\"../css/terapevtia.css\" rel=\"stylesheet\">";
+            else
+                echo "<link href=\"../css/terapevtiaDark.css\" rel=\"stylesheet\">";
+        ?>
+        <link href="../css/options.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
@@ -24,8 +34,7 @@
                     </div>
                     <div class="header-right-part">
 <?php
-    
-session_start();
+
 if(isset($_SESSION['name']))
 {
     echo "<img src=\"../img/user.png\" width=\"50px\">
@@ -57,6 +66,20 @@ else
 ?>
                     </div>
                 </header>
+                
+                <div class="options_container">
+                    <div class="options_flex">
+                        <form class="more_button" action="changeTheme.php" method="post">
+                            <input name="page" value="ortopedia" hidden>
+                            <?php
+                                if($_SESSION['theme'] == 'light')
+                                    echo "<input type=\"submit\" value=\"Темная тема\" onclick=\"changeTheme()\">";
+                                else
+                                    echo "<input type=\"submit\" value=\"Светлая тема\" onclick=\"changeTheme()\">";
+                            ?>
+                        </form>
+                    </div>
+                </div>
                 
                 <div class="main-info">
                     <img src="../img/ortopedia_img.png">

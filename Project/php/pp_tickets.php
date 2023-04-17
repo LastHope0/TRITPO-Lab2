@@ -15,7 +15,16 @@ if(!isset($_SESSION['name']) && !isset($_COOKIE['name']))
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link href="../css/profile.css" rel="stylesheet">
+        <?php
+            if(!isset($_SESSION['theme']))
+                $_SESSION['theme'] = 'light';
+        
+            if($_SESSION['theme'] == 'light')
+                echo "<link href=\"../css/profile.css\" rel=\"stylesheet\">";
+            else
+                echo "<link href=\"../css/profileDark.css\" rel=\"stylesheet\">";
+        ?>
+        <link href="../css/options.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
@@ -56,6 +65,21 @@ else if(isset($_COOKIE['name']))
 ?>                      
                     </div>
                 </header>
+                
+                <div class="options_container">
+                    <div class="options_flex">
+                        <form class="more_button" action="changeTheme.php" method="post">
+                            <input name="page" value="pp_tickets" hidden>
+                            <?php
+                                if($_SESSION['theme'] == 'light')
+                                    echo "<input class=\"button-myTickets\" type=\"submit\" value=\"Темная тема\" onclick=\"changeTheme()\">";
+                                else
+                                    echo "<input class=\"button-myTickets\" type=\"submit\" value=\"Светлая тема\" onclick=\"changeTheme()\">";
+                            ?>
+                        </form>
+                    </div>
+                </div>
+                
                 <div class="profile-menu">
                     <p class="profile-menu-title">Личный кабинет</p>
                     <p><a class="profile-menu-a" href="personal_page_profile.php">Профиль</a></p>

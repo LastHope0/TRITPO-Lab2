@@ -1,0 +1,11 @@
+.options_container {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.options_flex {
+    display: flex;
+    justify-content: space-between;
+}

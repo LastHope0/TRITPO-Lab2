@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Comfortaa', cursive;
+    color: #333333;
+    background-color: #6F7680;
+}
+
+.container-1 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container-2 {
+    width: 90%;
+    margin: 20px 0px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left-part {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-right-part {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-title {
+    margin-left: 10px;
+}
+
+.header-title p {
+    margin: 0;
+    font-size: 25px;
+}
+
+.header-title-part1 {
+    font-weight: bold;
+}
+
+.profile-part {
+    margin-left: 20px;
+}
+
+.profile-part-welcome {
+    margin: 0px 0px 5px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.profile-part a {
+    margin: 0;
+    color: #000077;
+}
+
+.profile-part a p {
+    margin: 8px 0px 0px 0px;
+}
+
+.profile-menu {
+    margin: 50px 0px;
+}
+
+.profile-menu-title {
+    margin: 0px 0px 15px 0px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.profile-menu-a {
+    color: #000077;
+    font-size: 18px;
+}
+
+.profile-menu p {
+    margin: 8px 0px 0px 0px;
+}
+
+.current-page {
+    color: black;
+    text-decoration: underline;
+}
+
+.current-page:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.thead-dark {
+    background-color: #116062;
+}
+
+
+
+
+.container-3 {
+    margin-bottom: 30px;
+}
+
+.container-table {
+    height: 250px;
+    overflow-y: auto;
+}
+
+.input-label {
+    font-size: 19px;
+    margin: 0px 0px 5px 0px;
+}
+
+input {
+    background-color: lightgray;
+    margin-bottom: 40px;
+    width: 450px;
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+
+.input-numeric {
+    width: 50px;
+}
+
+.input-street {
+    width: 210px;
+}
+
+.button-block {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    width: 450px;
+    background-color: #2E2E47;
+    color: #CCCCCC;
+    font-family: 'Comfortaa', cursive;
+    transition-duration: 0.2s;
+}
+
+.button:hover{
+    background-color: #3E3E68;
+}
+
+.cancel-block {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.cancel-block a {
+    color: #CCCCCC;
+}
+
+.inputs-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.inputs-block-group {
+    position: relative;
+    width: 470px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.error {
+    width: 300px;
+    font-size: 13px;
+    margin: 5px 0px 21px 0px;
+    color: red;
+}
+
+.error-input {
+    box-shadow: 0px 0px 10px red;
+    margin: 0px;
+}
+
+.error-absolute {
+    position: absolute;
+    bottom: 0px;
+}
+
+.input-absolute {
+    margin-bottom: 40px;
+}
+
+tbody tr {
+    transition-duration: 0.2s;
+}
+
+tbody tr:hover {
+    cursor: pointer;
+    background-color: #5F6678;
+}
+
+
+
+.button-block-myTickets {
+    margin-top: 30px;
+}
+
+.button-myTickets {
+    width: 250px;
+    background-color: #2E2E47;
+    color: #CCCCCC;
+    font-family: 'Comfortaa', cursive;
+    transition-duration: 0.2s;
+}
+
+.button-myTickets:hover{
+    background-color: #3E3E68;
+}
+
+
+.button-tickets {
+    margin: 0;
+    width: 110px;
+    background-color: #2E2E47;
+    color: #CCCCCC;
+    font-family: 'Comfortaa', cursive;
+    transition-duration: 0.2s;
+}
+
+.button-tickets:hover{
+    background-color: #3E3E68;
+}
+
+.filter {
+    width: 100%;
+    height: 50px;
+    background-color: #696969;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-filter {
+    width: 200px;
+    margin: 0;
+}
+
+select {
+    width: 150px;
+    height: 25px;
+    outline: none;
+    border-radius: 10px;
+    background-color: lightseagreen;
+    color: white;
+}
+
+.hidden-row {
+    display: none;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #6F7680;
+}
+
+::-webkit-scrollbar-thumb {
+    background: darkgrey;
+    border-radius: 8px;
+    border: 3px solid #6F7680;
+}

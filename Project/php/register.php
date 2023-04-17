@@ -12,7 +12,15 @@ if(isset($_SESSION['name']) || isset($_COOKIE['name']))
         <title>Health - Регистрация</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/register.css" rel="stylesheet">
+        <?php
+            if(!isset($_SESSION['theme']))
+                $_SESSION['theme'] = 'light';
+        
+            if($_SESSION['theme'] == 'light')
+                echo "<link href=\"../css/register.css\" rel=\"stylesheet\">";
+            else
+                echo "<link href=\"../css/registerDark.css\" rel=\"stylesheet\">";
+        ?>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">

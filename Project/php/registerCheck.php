@@ -34,7 +34,15 @@ $error = false;
         <title>Health - Регистрация</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/register.css" rel="stylesheet">
+        <?php
+            if(!isset($_SESSION['theme']))
+                $_SESSION['theme'] = 'light';
+        
+            if($_SESSION['theme'] == 'light')
+                echo "<link href=\"../css/register.css\" rel=\"stylesheet\">";
+            else
+                echo "<link href=\"../css/registerDark.css\" rel=\"stylesheet\">";
+        ?>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
@@ -186,12 +194,12 @@ $error = false;
                                 <div>
                                     <p class="input-label">Дом</p>
                                     <?php
-                                        if(!ctype_digit($clinic))
+                                        if(!ctype_digit($house[0]))
                                         {
                                             echo "<input class=\"error-input input-numeric input-absolute\" name=\"house\" placeholder=\"102\" required>";
                                             $error = true;
                                         }
-                                        else if(strlen($clinic) > 3)
+                                        else if(strlen($house) > 4)
                                         {
                                             echo "<input class=\"error-input input-numeric input-absolute\" name=\"house\" placeholder=\"102\" required>";
                                             $error = true;
@@ -203,12 +211,12 @@ $error = false;
                                 <div>
                                     <p class="input-label">Корп.</p>
                                     <?php
-                                        if(!ctype_digit($clinic))
+                                        if(!ctype_digit($build))
                                         {
                                             echo "<input class=\"error-input input-numeric input-absolute\" name=\"build\" placeholder=\"5\">";
                                             $error = true;
                                         }
-                                        else if(strlen($clinic) > 3)
+                                        else if(strlen($build) > 1)
                                         {
                                             echo "<input class=\"error-input input-numeric input-absolute\" name=\"build\" placeholder=\"5\">";
                                             $error = true;
@@ -220,12 +228,12 @@ $error = false;
                                 <div>
                                     <p class="input-label">Кв.</p>
                                     <?php
-                                        if(!ctype_digit($clinic))
+                                        if(!ctype_digit($apartment))
                                         {
                                             echo "<input class=\"error-input input-numeric input-absolute\" name=\"apartment\" placeholder=\"102\">";
                                             $error = true;
                                         }
-                                        else if(strlen($clinic) > 3)
+                                        else if(strlen($apartment) > 3)
                                         {
                                             echo "<input class=\"error-input input-numeric input-absolute\" name=\"apartment\" placeholder=\"102\">";
                                             $error = true;

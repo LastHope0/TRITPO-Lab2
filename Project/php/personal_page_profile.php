@@ -14,6 +14,41 @@ $db_id = '';
 $command = "SELECT * FROM Users WHERE id = '$db_id'";
 $currentUser = mysqli_fetch_row(mysqli_query($con, $command));
 
+/* SPLIT ADDRESS */
+
+$addressParts = explode(",", $currentUser[6]);
+$countAddressParts = count($addressParts);
+
+$district = '';
+$street = '';
+$house = '';
+$building = '';
+$flat = '';
+
+switch ($countAddressParts)
+{
+    case 2:
+        $district = explode(" ", $addressParts[0])[0];
+        $street = explode(" ", $addressParts[1])[2];
+        $house = explode(" ", $addressParts[1])[3];
+        break;
+    case 3:
+        $district = explode(" ", $addressParts[0])[0];
+        $street = explode(" ", $addressParts[1])[2];
+        $house = explode(" ", $addressParts[1])[3];
+        $flat = explode(" ", $addressParts[2])[2];
+        break;
+    case 4:
+        $district = explode(" ", $addressParts[0])[0];
+        $street = explode(" ", $addressParts[1])[2];
+        $house = explode(" ", $addressParts[1])[3];
+        $building = explode(" ", $addressParts[2])[2];
+        $flat = explode(" ", $addressParts[3])[2];
+        break;
+}
+
+/* END SPLIT ADDRESS */
+
 ?>
 
 <!doctype html>
@@ -22,7 +57,16 @@ $currentUser = mysqli_fetch_row(mysqli_query($con, $command));
         <title>Health - Профиль</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/profile.css" rel="stylesheet">
+        <?php
+            if(!isset($_SESSION['theme']))
+                $_SESSION['theme'] = 'light';
+        
+            if($_SESSION['theme'] == 'light')
+                echo "<link href=\"../css/profile.css\" rel=\"stylesheet\">";
+            else
+                echo "<link href=\"../css/profileDark.css\" rel=\"stylesheet\">";
+        ?>
+        <link href="../css/options.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
@@ -63,6 +107,21 @@ else if(isset($_COOKIE['name']))
 ?>                      
                     </div>
                 </header>
+                
+                <div class="options_container">
+                    <div class="options_flex">
+                        <form class="more_button" action="changeTheme.php" method="post">
+                            <input name="page" value="personal_page_profile" hidden>
+                            <?php
+                                if($_SESSION['theme'] == 'light')
+                                    echo "<input class=\"button-myTickets\" type=\"submit\" value=\"Темная тема\" onclick=\"changeTheme()\">";
+                                else
+                                    echo "<input class=\"button-myTickets\" type=\"submit\" value=\"Светлая тема\" onclick=\"changeTheme()\">";
+                            ?>
+                        </form>
+                    </div>
+                </div>
+                
                 <div class="profile-menu">
                     <p class="profile-menu-title">Личный кабинет</p>
                     <p><a class="profile-menu-a current-page" href="personal_page_profile.php">Профиль</a></p>
@@ -117,24 +176,34 @@ else if(isset($_COOKIE['name']))
                         <div class="inputs-block">
                             <div>
                                 <p class="input-label">Район</p>
-                                <input name="district" placeholder="Центральный" required>
+                                <?php
+                                    echo "<input name=\"district\" value=\"".$district."\" required>";
+                                ?>
                             </div>
                             <div class="inputs-block-group">
                                 <div>
                                     <p class="input-label">Улица</p>
-                                    <input class="input-street" name="street" placeholder="Пушкина" required>
+                                    <?php
+                                        echo "<input class=\"input-street\" name=\"street\" value=\"".$street."\" required>";
+                                    ?>
                                 </div>
                                 <div>
                                     <p class="input-label">Дом</p>
-                                    <input class="input-numeric" name="house" placeholder="102" required>
+                                    <?php
+                                        echo "<input class=\"input-numeric\" name=\"house\" value=\"".$house."\" required>";
+                                    ?>
                                 </div>
                                 <div>
                                     <p class="input-label">Корп.</p>
-                                    <input class="input-numeric" name="build" placeholder="5">
+                                    <?php
+                                        echo "<input class=\"input-numeric\" name=\"build\" value=\"".$building."\" required>";
+                                    ?>
                                 </div>
                                 <div>
                                     <p class="input-label">Кв.</p>
-                                    <input class="input-numeric" name="apartment" placeholder="102">
+                                    <?php
+                                        echo "<input class=\"input-numeric\" name=\"apartment\" value=\"".$flat."\" required>";
+                                    ?>
                                 </div>
                             </div>
                         </div>

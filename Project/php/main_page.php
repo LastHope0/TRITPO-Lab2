@@ -4,8 +4,18 @@
         <title>Health - Главная</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/main_page.css" rel="stylesheet">
+        <?php
+            session_start();
+            if(!isset($_SESSION['theme']))
+                $_SESSION['theme'] = 'light';
+        
+            if($_SESSION['theme'] == 'light')
+                echo "<link href=\"../css/main_page.css\" rel=\"stylesheet\">";
+            else
+                echo "<link href=\"../css/mainDark.css\" rel=\"stylesheet\">";
+        ?>
         <link href="../css/main_more_button.css" rel="stylesheet">
+        <link href="../css/options.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
@@ -26,7 +36,6 @@
                     <div class="header-right-part">
 <?php
     
-session_start();
 if(isset($_SESSION['name']))
 {
     echo "<img src=\"../img/user.png\" width=\"50px\">
@@ -60,8 +69,22 @@ else
                     </div>
                 </header>
                 
-                <div class="more_button">
-                    <input type="submit" value="Адреса и время работы" onmousedown="viewDiv()">
+                <div class="options_container">
+                    <div class="options_flex">
+                        <form class="more_button" action="changeTheme.php" method="post">
+                            <input name="page" value="main" hidden>
+                            <?php
+                                if($_SESSION['theme'] == 'light')
+                                    echo "<input type=\"submit\" value=\"Темная тема\" onclick=\"changeTheme()\">";
+                                else
+                                    echo "<input type=\"submit\" value=\"Светлая тема\" onclick=\"changeTheme()\">";
+                            ?>
+                        </form>
+
+                        <div class="more_button">
+                            <input type="submit" value="Адреса и время работы" onmousedown="viewDiv()">
+                        </div>
+                    </div>
                 </div>
                 
                 <div id="moreContainer">
