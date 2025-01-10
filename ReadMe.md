@@ -1,3 +1,7 @@
+# Laboratory Work for "Software Development and Testing Technologies" (BSUIR)
+
+This repository contains laboratory works for the course "Software Development and Testing Technologies" at the Belarusian State University of Informatics and Radioelectronics (BSUIR).
+
 <p align="center">
       <img src="Project/img/heart.png" alt="Project Logo" width="726">
 </p>
